@@ -1,0 +1,136 @@
+/* src/css/signup.css */
+
+.signup-container {
+  display: flex;
+  min-height: 600px;
+  background-color: var(--neutral-color);
+  color: var(--text-color);
+}
+
+.signup-form,
+.signup-image {
+  width: 50%;
+}
+
+.signup-form {
+  padding: 40px;
+  max-width: 400px;
+  margin: auto;
+}
+
+.signup-header {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.signup-header span {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: var(--primary-color);
+}
+
+.signup-header p {
+  color: var(--text-color);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.form-field {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.form-field:last-child {
+  margin-right: 0;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid var(--primary-color);
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.btn-primary {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: var(--primary-color);
+  color: var(--neutral-color);
+  margin-bottom: 10px;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+.signup-prompt {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.signup-prompt a {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+.signup-prompt a:hover {
+  text-decoration: underline;
+}
+
+.signup-image {
+  background: #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  height: 111vh;
+}
+
+.signup-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .signup-container {
+    flex-direction: column;
+  }
+
+  .signup-form,
+  .signup-image {
+    width: 100%;
+  }
+
+  .form-row {
+    flex-direction: column;
+  }
+
+  .form-field {
+    margin-right: 0;
+  }
+}

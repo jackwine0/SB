@@ -1,0 +1,140 @@
+/* General Home Page Styles */
+.home-container {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  padding: 20px;
+}
+
+.home-content {
+  flex: 1;
+}
+
+.welcome {
+  margin-bottom: 20px;
+}
+
+.welcome h1 {
+  font-size: 2rem;
+  color: var(--primary-color);
+}
+
+.welcome p {
+  font-size: 1.2rem;
+  color: var(--text-color);
+}
+
+.bal {
+  margin-bottom: 20px;
+}
+
+.trans {
+  margin-bottom: 20px;
+}
+
+/* Profile Sidebar Styles */
+.profile-sidebar {
+  width: 300px; /* Adjust width as needed */
+  background-color: var(--neutral-color);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Profile Component Styles */
+.profile-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-banner {
+  height: 150px; /* Adjust as needed */
+  background-color: var(--accent-color);
+  margin-bottom: 20px;
+}
+
+.profile-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.profile-img {
+  width: 80px; /* Adjust as needed */
+  height: 80px;
+  border-radius: 50%;
+  background-color: var(--secondary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--neutral-color);
+  font-size: 1.5rem;
+}
+
+.profile-details {
+  flex: 1;
+}
+
+.profile-name {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  margin: 0;
+}
+
+.profile-email {
+  font-size: 1rem;
+  color: var(--text-color);
+}
+
+.banks-section {
+  margin-top: 20px;
+}
+
+.banks-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-2 {
+  font-size: 1.2rem;
+  color: var(--primary-color);
+}
+
+.add-bank-link {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.add-bank-text {
+  margin-left: 8px;
+  color: var(--secondary-color);
+  font-size: 1rem;
+}
+
+.banks-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.bank-card-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.bank-card-wrapper.add-new {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 2px dashed var(--primary-color);
+  border-radius: 8px;
+  height: 60px; /* Adjust as needed */
+  width: 100%;
+}
+
+.bank-card-wrapper.add-new i {
+  color: var(--primary-color);
+}
