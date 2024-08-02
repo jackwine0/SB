@@ -33,10 +33,14 @@ const TotalBalanceBox = ({ totalBanks, totalCurrentBalance }) => {
       <div className="details">
         <h2 className="total-banks">Bank Accounts: {totalBanks}</h2>
         <div className="balance-info">
-          <p className="balance-label">Total Current Balance</p> $4000
-          <div className="balance-amount">
-          </div>
+          <p className="balance-label">Total Current Balance</p>
+          <p className="balance-amount">${totalCurrentBalance}</p>
         </div>
+      </div>
+
+      <div className="add-bank">
+        Add Bank
+        <span className="plus-icon">+</span>
       </div>
     </div>
   );

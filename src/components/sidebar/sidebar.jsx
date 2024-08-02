@@ -9,6 +9,7 @@ import {
   faUniversity,
   faLightbulb,
   faSignOutAlt,
+  faSearch,
 } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import './sidebar.css'; // Ensure correct path to your CSS file
@@ -22,9 +23,13 @@ const Sidebar = () => {
           alt="Company Logo"
           className="company-logo"
         />
-        <h1 className="company-name">SureBanker</h1>
+        <span>Surebanker</span>
       </div>
       <div className="sidebar-content">
+        <div className="search-bar">
+          <FontAwesomeIcon icon={faSearch} className="search-icon" />
+          <input type="text" placeholder="Search..." className="search-input" />
+        </div>
         <Link to="/home" className="nav-item">
           <FontAwesomeIcon icon={faHome} />
           <span className="topic">Home</span>

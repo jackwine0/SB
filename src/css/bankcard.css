@@ -1,64 +1,59 @@
-/* bankcard.css */
+/* src/components/BankCard.css */
 
-.cc {
-    background-color: var(--neutral-color);
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: 300px;
-    padding: 20px;
-    margin: 10px;
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .cc svg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    fill: var(--primary-color);
-    opacity: 0.1;
-  }
-  
-  .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .bank-name {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--text-color);
-  }
-  
-  .circuit .logo {
-    width: 50px;
-    height: auto;
-  }
-  
-  .holder {
-    margin-top: 20px;
-  }
-  
-  .name {
-    display: block;
-    font-size: 1rem;
-    font-weight: bold;
-    color: var(--text-color);
-  }
-  
-  .number {
-    display: block;
-    font-size: 1.1rem;
-    margin-top: 10px;
-    color: var(--text-color);
-  }
-  
-  .type {
-    display: block;
-    font-size: 0.9rem;
-    color: var(--text-color);
-    margin-top: 5px;
-  }
-  
+.bank-card {
+  background: linear-gradient(135deg, #006d32, #00c853);
+  border-radius: 10px;
+  color: #fff;
+  padding: 20px;
+  position: relative;
+  width: 300px;
+  height: 180px;
+  margin: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.copy-icon {
+  cursor: pointer;
+}
+
+.bank-name {
+  font-weight: bold;
+}
+
+.card-body {
+  margin-top: 30px;
+}
+
+.card-details {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.card-holder-name,
+.expiry-date {
+  font-size: 12px;
+}
+
+.card-number {
+  font-size: 16px;
+  letter-spacing: 1.5px;
+  margin-top: 10px;
+}
+
+.card-footer {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+.logo {
+  width: 40px;
+  height: auto;
+}

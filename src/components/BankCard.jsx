@@ -1,30 +1,45 @@
-// BankCard.jsx
-import React from 'react';
-import '../css/bankcard.css'; // Ensure your CSS styles are in place
+// src/components/BankCard.jsx
 
-const BankCard = ({ type, holderName, cardNumber }) => {
-  const formattedNumber = cardNumber.replace(/(\d{4})(?=\d)/g, '$1 - ');
+import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCopy } from "@fortawesome/free-solid-svg-icons";
+import "../css/bankcard.css";
 
-  // Detect card type
+const detectCard = (input) => {
+  if (/^4/.test(input)) {
+    return "visa";
+  } else if (/^5[1-5]/.test(input)) {
+    return "mastercard";
+  }
+  return "unknown";
+};
+
+const BankCard = ({ cardNumber, name, expiryDate, bankName }) => {
   const cardType = detectCard(cardNumber);
 
   return (
-    <div className={`cc ${cardType}`}>
-      <svg width="295" height="87">
-        <path d="M 0 0 C 50 50 250 0 300 87"></path>
-      </svg>
-      <div className="container">
-        <div className="bank-name">surebank</div>
-        
+    <div className="bank-card">
+      <div className="card-header">
+        <FontAwesomeIcon icon={faCopy} className="copy-icon" />
+        <span className="bank-name">{bankName}</span>
+      </div>
+      <div className="card-body">
+        <div className="card-details">
+          <span className="card-holder-name">{name}</span>
+          <span className="expiry-date">{expiryDate}</span>
+        </div>
+        <div className="card-number">{cardNumber}</div>
+      </div>
+      <div className="card-footer">
         <div className="circuit">
-          {cardType === 'visa' && (
+          {cardType === "visa" && (
             <img
               src="https://res.cloudinary.com/duicyr28v/image/upload/v1722498097/Visa_Logo_PNG_cevjqq.jpg"
               alt="Visa Logo"
               className="logo"
             />
           )}
-          {cardType === 'mastercard' && (
+          {cardType === "mastercard" && (
             <img
               src="https://res.cloudinary.com/duicyr28v/image/upload/v1722498097/Mastercard_PNG_ivda1e.jpg"
               alt="Mastercard Logo"
@@ -33,23 +48,8 @@ const BankCard = ({ type, holderName, cardNumber }) => {
           )}
         </div>
       </div>
-      <div className="holder">
-        <span className="name">{holderName}</span>
-        <span className="number">{formattedNumber}</span>
-        <div className="type">{type}</div>
-      </div>
     </div>
   );
 };
-
-// Function to detect card type based on number
-function detectCard(input) {
-  if (/^4/.test(input)) {
-    return 'visa';
-  } else if (/^5[1-5]/.test(input)) {
-    return 'mastercard';
-  }
-  return 'unknown';
-}
 
 export default BankCard;
