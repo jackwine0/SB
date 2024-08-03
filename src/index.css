@@ -45,17 +45,19 @@ p {
 
 /* Buttons */
 button {
-  background-color: #05BB9A; /* Primary action color */
+  background-color: #1d5152;
   color: white;
-  padding: 10px 20px;
   border: none;
-  border-radius: 5px;
+  padding: 10px 20px;
+  border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  width: 100%;
 }
 
 button:hover {
-  background-color: #049882; /* Slightly darker for hover effect */
+  background-color: white;
+  color: #1d5152;
+  border: 1px solid #1d5152;
 }
 
 

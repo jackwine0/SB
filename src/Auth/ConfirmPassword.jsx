@@ -1,14 +1,15 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import '../css/confirmpassword.css'; // Create this CSS file
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import "../css/confirmpassword.css";
 
 const ConfirmPassword = () => {
   const [formData, setFormData] = useState({
-    newPassword: '',
-    confirmPassword: '',
+    newPassword: "",
+    confirmPassword: "",
   });
 
-  const [error, setError] = useState('');
+  const [showPopup, setShowPopup] = useState(false);
+
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -20,30 +21,39 @@ const ConfirmPassword = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     if (formData.newPassword !== formData.confirmPassword) {
-      setError('Passwords do not match');
+      alert("Passwords do not match. Please try again.");
       return;
     }
-    // Handle password reset logic here
-    console.log('Password has been reset:', formData.newPassword);
-    // Navigate to a success page or login page
-    navigate('/signin');
+
+    // Handle password change logic here
+    console.log("Password changed:", formData.newPassword);
+
+    // Show confirmation popup
+    setShowPopup(true);
+
+    // Navigate to sign-in page after 2 seconds
+    setTimeout(() => {
+      navigate("/signin");
+    }, 2000);
   };
 
   return (
-    <div className="confirmpassword-container">
-      <div className="confirmpassword-form">
-        <header className="confirmpassword-header">
+    <div className="password-container">
+      <div className="password-form">
+        <header className="password-header">
           <img
-            src="https://res.cloudinary.com/duicyr28v/image/upload/v1722374889/SB_LOGO_yixwfz.svg"
-            alt="Horizon Logo"
-            className="confirmpassword-logo"
+            src="https://res.cloudinary.com/duicyr28v/image/upload/v1721168513/surebanker_logo_aoy8rn.svg"
+            alt="SureBanker Logo"
+            className="password-logo"
           />
-          <h1>Reset Password</h1>
-          <p>Enter your new password below.</p>
+          <span>SureBanker</span>
+          <h2>Change Password</h2>
+          <p>Please enter your new password.</p>
         </header>
         <form onSubmit={handleSubmit}>
-          <div className="form-group">
+          <div className="password-group">
             <label htmlFor="newPassword">New Password</label>
             <input
               id="newPassword"
@@ -55,7 +65,7 @@ const ConfirmPassword = () => {
               required
             />
           </div>
-          <div className="form-group">
+          <div className="password-group">
             <label htmlFor="confirmPassword">Confirm Password</label>
             <input
               id="confirmPassword"
@@ -67,21 +77,25 @@ const ConfirmPassword = () => {
               required
             />
           </div>
-          {error && <div className="error">{error}</div>}
-          <button type="submit" className="btn-primary">
-            Confirm Password
+          <button type="submit" className="password-btn">
+            Change Password
           </button>
         </form>
-        <div className="signin-prompt">
-          Remember your password? <a href="/signin">Sign in</a>
-        </div>
       </div>
-      <div className="confirmpassword-image">
+      <div className="password-image">
         <img
           src="https://res.cloudinary.com/duicyr28v/image/upload/v1722404737/9951f78474309b2ddc3d44cc201c51be_kkjnqk.jpg"
           alt="Background"
         />
       </div>
+      {showPopup && (
+        <div className="password-popup">
+          <div className="popup-content">
+            <h3>Password Changed Successfully!</h3>
+            <p>You will be redirected to the sign-in page shortly.</p>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

@@ -1,149 +1,125 @@
 import React, { useState } from 'react';
-import '../css/signup.css';
+import '../css/signup.css'; // Import the CSS file for styling
 
 const Signup = () => {
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
     address: '',
-    state: '',
     dob: '',
     email: '',
     password: '',
-    country: '', // Add country field
+    country: '', // Add country field dropdown
   });
 
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission logic
-    console.log('Form data submitted:', formData);
+    // Handle form submission logic here
+  };
+
+  const [showPassword, setShowPassword] = useState(false);
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
   };
 
   return (
     <div className="signup-container">
-      <div className="signup-form">
-        <header className="signup-header">
-        <img src="https://res.cloudinary.com/duicyr28v/image/upload/v1722374889/SB_LOGO_yixwfz.svg" alt="Horizon Logo" className="signin-logo" />
-        
-          <span>Signup</span>
-          <p>Please enter your details.</p>
-        </header>
-        <form onSubmit={handleSubmit}>
-          <div className="form-group">
-            <div className="form-row">
-              <div className="form-field">
-                <label htmlFor="firstName">First Name</label>
-                <input
-                  id="firstName"
-                  name="firstName"
-                  type="text"
-                  placeholder="ex: John"
-                  value={formData.firstName}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-              <div className="form-field">
-                <label htmlFor="lastName">Last Name</label>
-                <input
-                  id="lastName"
-                  name="lastName"
-                  type="text"
-                  placeholder="ex: Doe"
-                  value={formData.lastName}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-            </div>
-            <div className="form-field">
-              <label htmlFor="address">Address</label>
-              <input
-                id="address"
-                name="address"
-                type="text"
-                placeholder="Enter your specific address"
-                value={formData.address}
-                onChange={handleChange}
-                required
-              />
-            </div>
-            <div className="form-row">
-              <div className="form-field">
-                <label htmlFor="dob">Date of Birth</label>
-                <input
-                  id="dob"
-                  name="dob"
-                  type="date"
-                  value={formData.dob}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-              <div className="form-field">
-                <label htmlFor="country">Country</label>
-                <select
-                  id="country"
-                  name="country"
-                  value={formData.country}
-                  onChange={handleChange}
-                  required
-                >
-                  <option value="" disabled>Select your country</option>
-                  <option value="Nigeria">Nigeria</option>
-                  <option value="South Africa">South Africa</option>
-                  <option value="Kenya">Kenya</option>
-                  <option value="Egypt">Egypt</option>
-                  <option value="Ghana">Ghana</option>
-                  <option value="Ethiopia">Ethiopia</option>
-                  <option value="Uganda">Uganda</option>
-                  <option value="Tanzania">Tanzania</option>
-                  <option value="Morocco">Morocco</option>
-                  <option value="Algeria">Algeria</option>                </select>
-              </div>
-            </div>
-            <div className="form-field">
-              <label htmlFor="email">Email</label>
-              <input
-                id="email"
-                name="email"
-                type="email"
-                placeholder="Enter your email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-              />
-            </div>
-            <div className="form-field">
-              <label htmlFor="password">Password</label>
-              <input
-                id="password"
-                name="password"
-                type="password"
-                placeholder="Enter your password"
-                value={formData.password}
-                onChange={handleChange}
-                required
-              />
-            </div>
-          </div>
-          <button type="submit" className="btn-primary">
-            Sign up
-          </button>
-        </form>
-        <div className="signup-prompt">
-          Already have an account? <a href="/signin">Login</a>
+      
+      <div className="signup-col1">
+      <div className='x1'>
+        <img
+          src="https://res.cloudinary.com/duicyr28v/image/upload/v1721168513/surebanker_logo_aoy8rn.svg"
+          alt="SureBanker Logo"
+          className="logo"
+        />
+        <span className="company-name">SureBanker</span>
+        <h2>Sign Up</h2>
+        <p>Please enter your details.</p>
         </div>
+        <form onSubmit={handleSubmit}>
+          <div className="input-row">
+            <input
+              type="text"
+              name="firstName"
+              placeholder="First Name"
+              value={formData.firstName}
+              onChange={handleChange}
+            />
+            <input
+              type="text"
+              name="lastName"
+              placeholder="Last Name"
+              value={formData.lastName}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="input-row">
+            <input
+              type="text"
+              name="address"
+              placeholder="Address"
+              value={formData.address}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="input-row">
+            <input
+              type="date"
+              name="dob"
+              placeholder="Date of Birth"
+              value={formData.dob}
+              onChange={handleChange}
+            />
+            <select
+              name="country"
+              value={formData.country}
+              onChange={handleChange}
+            >
+              <option value="">Select Country</option>
+              {/* Add country options here */}
+              <option value="us">United States</option>
+              <option value="ca">Canada</option>
+              {/* Add more options as needed */}
+            </select>
+          </div>
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            value={formData.email}
+            onChange={handleChange}
+          />
+           <div className="password-container">
+              <input
+                type={showPassword ? 'text' : 'password'}
+                id="password"
+                placeholder="Enter your password"
+              />
+              <span
+                className="password-toggle"
+                onClick={togglePasswordVisibility}
+              >
+                {showPassword ? '🙈' : '👁️'}
+              </span>
+            </div>
+          <button type="submit" className="signup-button">Sign Up</button>
+        </form>
+        <p className="login-link">
+          Already have an account? <a href="/signin">Login</a>
+        </p>
       </div>
-      <div className="signup-image">
-        <img src="https://res.cloudinary.com/duicyr28v/image/upload/v1722404737/9951f78474309b2ddc3d44cc201c51be_kkjnqk.jpg" alt="Background" />
+      <div className="signup-col2">
+        <img
+          src="https://your-image-url.com/signup-background.jpg" // Update with the actual image URL
+          alt="Signup Background"
+          className="background-image"
+        />
       </div>
     </div>
   );

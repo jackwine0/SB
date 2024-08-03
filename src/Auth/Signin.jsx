@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
-import '../css/signin.css';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
+import "../css/signin.css";
 
 const Signin = () => {
   const [formData, setFormData] = useState({
-    email: '',
-    password: '',
+    email: "",
+    password: "",
   });
 
   const navigate = useNavigate(); // Initialize navigate
@@ -20,63 +20,74 @@ const Signin = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Handle form submission logic here
-    console.log('Form data submitted:', formData);
+    console.log("Form data submitted:", formData);
 
     // Navigate to home on successful sign-in
-    navigate('/home');
+    navigate("/home");
   };
 
   const handleSignupNavigation = () => {
     // Navigate to the signup page
-    navigate('/signup');
+    navigate("/signup");
   };
 
   return (
     <div className="signin-container">
       <div className="signin-form">
-        <header className="signin-header">
-          <img
-            src="https://res.cloudinary.com/duicyr28v/image/upload/v1722374889/SB_LOGO_yixwfz.svg"
-            alt="Horizon Logo"
-            className="signin-logo"
-          />
-          <h1>Sign in</h1>
-          <p>Welcome back! Please enter your details.</p>
-        </header>
-        <form onSubmit={handleSubmit}>
-          <div className="form-group">
-            <label htmlFor="email">Email</label>
-            <input
-              id="email"
-              name="email"
-              type="email"
-              placeholder="Enter email"
-              value={formData.email}
-              onChange={handleChange}
-              required
+        <div>
+          <header className="signin-header">
+            <img
+              src="https://res.cloudinary.com/duicyr28v/image/upload/v1721168513/surebanker_logo_aoy8rn.svg"
+              alt="SureBanker Logo"
+              className="signin-logo"
             />
+            <span>SureBanker</span>
+            <h2>Sign in</h2>
+            <p>Welcome back! Please enter your details.</p>
+          </header>
+          <form onSubmit={handleSubmit}>
+            <div className="form-group">
+              <label htmlFor="email">Email</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                placeholder="Enter email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="password">Password</label>
+              <input
+                id="password"
+                name="password"
+                type="password"
+                placeholder="Enter password"
+                value={formData.password}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <button type="submit" className="x">
+              Sign in
+            </button>
+          </form>
+          <div className="xx">
+          <div className="signup-prompt">
+            Don't have an account?{" "}
+            <span
+              onClick={handleSignupNavigation}
+              style={{ cursor: "pointer", color: "#1d5152" }}
+            >
+              <strong>Sign up</strong>
+            </span>
           </div>
-          <div className="form-group">
-            <label htmlFor="password">Password</label>
-            <input
-              id="password"
-              name="password"
-              type="password"
-              placeholder="Enter password"
-              value={formData.password}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <a href="/forgot-password" className="forgot-password">
-            Forgot password?
+          <a href="/forgot-password" className="forgot-link">
+            <strong>Forgot your password?</strong>
           </a>
-          <button type="submit" className="btn-primary">
-            Sign in
-          </button>
-        </form>
-        <div className="signup-prompt">
-          Don't have an account? <span onClick={handleSignupNavigation} style={{ cursor: 'pointer', color: 'var(--accent-color)' }}>Sign up</span>
+          </div>
         </div>
       </div>
       <div className="signin-image">
@@ -88,6 +99,5 @@ const Signin = () => {
     </div>
   );
 };
-
 
 export default Signin;
