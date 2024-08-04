@@ -29,96 +29,128 @@ const Signup = () => {
   };
 
   return (
-    <div className="signup-container">
-      
-      <div className="signup-col1">
-      <div className='x1'>
-        <img
-          src="https://res.cloudinary.com/duicyr28v/image/upload/v1721168513/surebanker_logo_aoy8rn.svg"
-          alt="SureBanker Logo"
-          className="logo"
-        />
-        <span className="company-name">SureBanker</span>
-        <h2>Sign Up</h2>
-        <p>Please enter your details.</p>
-        </div>
-        <form onSubmit={handleSubmit}>
-          <div className="input-row">
-            <input
-              type="text"
-              name="firstName"
-              placeholder="First Name"
-              value={formData.firstName}
-              onChange={handleChange}
-            />
-            <input
-              type="text"
-              name="lastName"
-              placeholder="Last Name"
-              value={formData.lastName}
-              onChange={handleChange}
-            />
-          </div>
-          <div className="input-row">
-            <input
-              type="text"
-              name="address"
-              placeholder="Address"
-              value={formData.address}
-              onChange={handleChange}
-            />
-          </div>
-          <div className="input-row">
-            <input
-              type="date"
-              name="dob"
-              placeholder="Date of Birth"
-              value={formData.dob}
-              onChange={handleChange}
-            />
-            <select
-              name="country"
-              value={formData.country}
-              onChange={handleChange}
-            >
-              <option value="">Select Country</option>
-              {/* Add country options here */}
-              <option value="us">United States</option>
-              <option value="ca">Canada</option>
-              {/* Add more options as needed */}
-            </select>
-          </div>
-          <input
-            type="email"
-            name="email"
-            placeholder="Email"
-            value={formData.email}
-            onChange={handleChange}
+    <div className="signup__container">
+      <div className="signup__col1">
+        <div className='signup__header'>
+          <img
+            src="https://res.cloudinary.com/duicyr28v/image/upload/v1721168513/surebanker_logo_aoy8rn.svg"
+            alt="SureBanker Logo"
+            className="signup__logo"
           />
-           <div className="password-container">
+          <span className="signup__company-name">SureBanker</span>
+          <h2 className="signup__title">Sign Up</h2>
+          <p className="signup__description">Please enter your details.</p>
+        </div>
+        <form className="signup__form" onSubmit={handleSubmit}>
+          <div className="signup__input-row">
+            <div className="signup__input-container">
+              <label htmlFor="firstName" className="signup__label">First Name</label>
+              <input
+                type="text"
+                id="firstName"
+                name="firstName"
+                placeholder="First Name"
+                value={formData.firstName}
+                onChange={handleChange}
+                className="signup__input"
+              />
+            </div>
+            <div className="signup__input-container">
+              <label htmlFor="lastName" className="signup__label">Last Name</label>
+              <input
+                type="text"
+                id="lastName"
+                name="lastName"
+                placeholder="Last Name"
+                value={formData.lastName}
+                onChange={handleChange}
+                className="signup__input"
+              />
+            </div>
+          </div>
+          <div className="signup__input-row">
+            <div className="signup__input-container">
+              <label htmlFor="address" className="signup__label">Address</label>
+              <input
+                type="text"
+                id="address"
+                name="address"
+                placeholder="Address"
+                value={formData.address}
+                onChange={handleChange}
+                className="signup__input"
+              />
+            </div>
+          </div>
+          <div className="signup__input-row">
+            <div className="signup__input-container">
+              <label htmlFor="dob" className="signup__label">Date of Birth</label>
+              <input
+                type="date"
+                id="dob"
+                name="dob"
+                placeholder="Date of Birth"
+                value={formData.dob}
+                onChange={handleChange}
+                className="signup__input"
+              />
+            </div>
+            <div className="signup__input-container">
+              <label htmlFor="country" className="signup__label">Country</label>
+              <select
+                id="country"
+                name="country"
+                value={formData.country}
+                onChange={handleChange}
+                className="signup__select"
+              >
+                <option value="">Select Country</option>
+                <option value="us">United States</option>
+                <option value="ca">Canada</option>
+                {/* Add more options as needed */}
+              </select>
+            </div>
+          </div>
+          <div className="signup__input-row">
+            <div className="signup__input-container">
+              <label htmlFor="email" className="signup__label">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Email"
+                value={formData.email}
+                onChange={handleChange}
+                className="signup__input"
+              />
+            </div>
+          </div>
+          <div className="signup__password-container">
+            <div className="signup__input-container">
+              <label htmlFor="password" className="signup__label">Password</label>
               <input
                 type={showPassword ? 'text' : 'password'}
                 id="password"
+                name="password"
                 placeholder="Enter your password"
+                value={formData.password}
+                onChange={handleChange}
+                className="signup__input signup__password-input"
               />
-              <span
-                className="password-toggle"
-                onClick={togglePasswordVisibility}
-              >
-                {showPassword ? '🙈' : '👁️'}
-              </span>
+            
             </div>
-          <button type="submit" className="signup-button">Sign Up</button>
+          </div>
+          <button type="submit" className="signup__button">Sign Up</button>
         </form>
-        <p className="login-link">
-          Already have an account? <a href="/signin">Login</a>
+        <p className="signup__login-link">
+          Already have an account? <a href="/signin" className="signup__login-anchor"><strong>Login</strong></a>
         </p>
       </div>
-      <div className="signup-col2">
+      <div className="signup__col2">
         <img
           src="https://your-image-url.com/signup-background.jpg" // Update with the actual image URL
           alt="Signup Background"
-          className="background-image"
+          className="signup__background-image"
         />
       </div>
     </div>

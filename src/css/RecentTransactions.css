@@ -60,8 +60,9 @@
 }
 
 .bank-profile {
-  background-color: #f5faff;
+  background:linear-gradient(135deg, #006d32, #00c853);
   display: flex;
+  color:#fff;
   padding: 30px;
   justify-content: space-between;
   align-items: center;
@@ -91,17 +92,19 @@
 .bank-name {
   font-size: 18px;
   font-weight: bold;
+  color: white;
+  margin-top: 10px;
 }
 
 .bank-amount p {
   font-size: 20px;
-  color: #006d32;
+  color: white;
 }
 
 .account-type {
   font-size: 14px;
   font-weight: bold;
-  color: #1D5152;
+  color: black;
   margin-left: auto;
 }
 
