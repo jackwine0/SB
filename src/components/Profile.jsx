@@ -1,69 +1,35 @@
-import React, { useState } from 'react';
-import '../css/Profile.css'; // Import your CSS file
-import BankCard from './BankCard';
-import IntegrateCard from './IntegrateCard';
+import React from 'react';
+import BankCardsCarousel from '../components/BankCardsCarousel';
+import BudgetSection from '../components/BudgetSection';
+import '../css/Profile.css';
 
-const Profile = ({ user = {}, banks = [] }) => {
-  const [showForm, setShowForm] = useState(false);
-  const [cardList, setCardList] = useState(banks);
-
-  const addCard = (newCard) => {
-    if (cardList.length < 5) {
-      setCardList([...cardList, { ...newCard, $id: Date.now() }]);
-      setShowForm(false);
-    }
+const Profile = () => {
+  const user = {
+    name: 'Akande Samuel',
+    email: 'user@example.com',
+    avatar: 'https://via.placeholder.com/100', // Replace with actual image URL or path
   };
 
   return (
-    <section className="profile-container">
-      <div className="profile-banner"></div>
-      <div className="profile-content">
-        <div className="profile-img">
-          <span className="profile-initial">
-            {user.initials || 'N/A'}
-          </span>
-        </div>
-        <div className="profile-details">
-          <h1 className="profile-name">
-            {user.name || 'N/A'}
-          </h1>
-          <p className="profile-email">{user.email || 'N/A'}</p>
+    <div className="profile">
+      <div className="header-image">
+        <img src={user.avatar} alt="Avatar" className="profile-avatar" />
+      </div>
+      <div className="profile-info">
+        <h2>{user.name}</h2>
+        <p>{user.email}</p>
+      </div>
+      <div className="profile-section">
+        <h3>My Banks</h3>
+        <div className="bank-cards">
+          <BankCardsCarousel />
         </div>
       </div>
-
-      <section className="banks-section">
-        <div className="banks-header">
-          <h2 className="header-2">My Banks</h2>
-          <div className="add-bank-link" onClick={() => setShowForm(true)}>
-            <img src="/icons/plus.svg" width={10} height={10} alt="plus" />
-            <h2 className="add-bank-text">Add Bank</h2>
-          </div>
-        </div>
-
-        <div className="banks-container">
-          {cardList.length > 0 ? (
-            cardList.map((bank) => (
-              <div className="bank-card-wrapper" key={bank.$id}>
-                <BankCard
-                  type={bank.type}
-                  holderName={bank.holderName}
-                  cardNumber={bank.cardNumber}
-                />
-              </div>
-            ))
-          ) : (
-            <p>No cards available. Add a card to get started.</p>
-          )}
-          {cardList.length < 5 && (
-            <div className="bank-card-wrapper add-new" onClick={() => setShowForm(true)}>
-              <i className="fas fa-plus fa-2x"></i>
-            </div>
-          )}
-        </div>
-
-        {showForm && <IntegrateCard onAddCard={addCard} />}
-      </section>
-    </section>
+      <div className="profile-section">
+        <h3>My budgets</h3>
+        <BudgetSection />
+      </div>
+    </div>
   );
 };
 

@@ -19,8 +19,10 @@
 }
 
 .signin-logo {
-  width: 50px;
+   width: 50px;
   height: auto;
+  background: #00c853;
+  padding: 10px;
 }
 
 .signin-header span {
@@ -28,12 +30,13 @@
   font-size: 24px;
   font-weight: bold;
   margin: 10px 0;
-  color: #1d5152;
+  color: #00c853;
 
 }
 
-.signin-header h1 {
+.signin-header h2 {
   margin-bottom: 10px;
+  color: #00c853;
 }
 
 .signin-header p {
@@ -79,18 +82,20 @@ input[type="password"] {
 
 .signup-prompt span {
   font-weight: bold;
+  color: #00c853;
+  cursor: pointer;
 }
 
 .forgot-link {
   margin-top: 10px;
   display: inline-block;
-  color: #1d5152;
+  color: #00c853;
   text-decoration: none;
   font-size: 14px;
 }
 
 .forgot-link:hover {
-  color: #005b4f;
+  color: #00c853;
 }
 
 .signin-image {

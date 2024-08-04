@@ -79,7 +79,6 @@ const Signin = () => {
             Don't have an account?{" "}
             <span
               onClick={handleSignupNavigation}
-              style={{ cursor: "pointer", color: "#1d5152" }}
             >
               <strong>Sign up</strong>
             </span>

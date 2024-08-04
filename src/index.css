@@ -46,7 +46,7 @@ p {
 
 /* Buttons */
 button {
-  background-color: #1d5152;
+  background-color: #00c853;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -57,8 +57,8 @@ button {
 
 button:hover {
   background-color: white;
-  color: #1d5152;
-  border: 1px solid #1d5152;
+  color: #00c853;
+  border: 1px solid #00c853;
 }
 
 
