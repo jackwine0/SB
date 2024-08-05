@@ -7,7 +7,7 @@ const Profile = () => {
   const user = {
     name: 'Akande Samuel',
     email: 'user@example.com',
-    avatar: 'https://via.placeholder.com/100', // Replace with actual image URL or path
+    avatar: 'https://res.cloudinary.com/duicyr28v/image/upload/v1722881594/Minimalist_Avatar_-_Illustration_wjv4wp.jpg', // Replace with actual image URL or path
   };
 
   return (
