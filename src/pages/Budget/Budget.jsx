@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import BudgetCard from '../components/BudgetCard';
-import '../css/Budget.css';
+import BudgetCard from '../../components/BudgetCard';
+import './Budget.css';
 
 const emojis = ['💻', '🍔', '💰', '📚', '🏋️‍♂️', '🎮', '🏠', '🚗', '✈️'];
 

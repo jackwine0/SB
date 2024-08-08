@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom"; // Import useNavigate
-import "../css/signin.css";
+import "../Login/signin.css";
 
 const ForgotPassword = () => {
   const [email, setEmail] = useState("");
@@ -54,10 +54,14 @@ const ForgotPassword = () => {
       </div>
       </div>
       <div className="signin-image">
-        <img
-          src="https://res.cloudinary.com/duicyr28v/image/upload/v1722404737/9951f78474309b2ddc3d44cc201c51be_kkjnqk.jpg"
-          alt="Background"
-        />
+      <div className="spinner">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
       </div>
     </div>
   );

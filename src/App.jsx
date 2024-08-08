@@ -1,18 +1,19 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Landingpage from './pages/Landingpage';
-import Signin from './Auth/Signin';
-import Signup from './Auth/Signup';
-import ForgotPassword from './Auth/ForgotPassword';
-import ConfirmPassword from './Auth/ConfirmPassword';
+import Landingpage from './pages/Landingpage/Landingpage';
+import Signin from './Auth/Login/Signin';
+import Signup from './Auth/SignUp/Signup';
+import ForgotPassword from './Auth/Forgot/ForgotPassword';
+import ConfirmPassword from './Auth/Confirm/ConfirmPassword';
 import Sidebar from './components/sidebar/sidebar';
-import Home from './pages/Home';
-import Budget from './pages/Budget';
-import Transaction from './pages/Transaction';
-import Transfer from './pages/Transfer';
-import MyBanks from './pages/mybanks';
-import Advice from './pages/Advice';
+import Home from './pages/Home/Home';
+import Budget from './pages/Budget/Budget';
+import Transaction from './pages/Transaction/Transaction';
+import Transfer from './pages/Transfer/Transfer';
+import MyBanks from './pages/Mybanks/mybanks';
+import Advice from './pages/Advice/Advice';
 import Profile from './components/Profile';
+import Otp from './Auth/OTP/Otp';
 
 const ProtectedRoute = ({ children }) => {
   // Logic for checking authentication can be added here
@@ -33,6 +34,7 @@ function App() {
     <Routes>
       {/* Public Routes */}
       <Route path="/" element={<Landingpage />} />
+      <Route path="/otp" element={<Otp onVerify={() => window.location.replace('/signin')} />} />
       <Route path="/signin" element={<Signin />} />
       <Route path="/signup" element={<Signup />} />
       <Route path="/forgot-password" element={<ForgotPassword />} />

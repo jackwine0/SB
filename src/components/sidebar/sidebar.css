@@ -38,7 +38,7 @@
 
 .search-icon {
   position: absolute;
-  right: 10px;
+  right: 20px;
   margin-bottom: auto;
   top: calc(50% + 5px);
   color: #000;
@@ -46,13 +46,11 @@
 }
 
 .search-input {
-  width: 100%;
+  width: 97%;
   height: 40px;
   padding: 10px;
   transition: .2s linear;
-  border: 2.5px solid black;
   font-size: 14px;
-  text-transform: uppercase;
   letter-spacing: 2px;
 }
 

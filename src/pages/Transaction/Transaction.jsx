@@ -1,7 +1,7 @@
 // src/pages/Transaction.jsx
 
 import React, { useState } from 'react';
-import '../css/Transaction.css';
+import './Transaction.css';
 
 const transactionsData = [
   { transaction: "Spotify", amount: "-$15.00", status: "Processing", date: "Wed 1:00pm", category: "Subscriptions" },

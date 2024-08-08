@@ -1,9 +1,9 @@
 // src/pages/Home.jsx
 import React from 'react';
-import Profile from '../components/Profile';
-import TotalBalanceBox from '../components/TotalBalanceBox';
-import RecentTransactions from '../components/RecentTransactions';
-import '../css/Home.css'; // Assuming you create a CSS file for specific styling
+import Profile from '../../components/Profile';
+import TotalBalanceBox from '../../components/TotalBalanceBox';
+import RecentTransactions from '../../components/RecentTransactions';
+import './Home.css'; // Assuming you create a CSS file for specific styling
 
 const Home = ({ title, subtitle, accountNumber, accountsData, user, banks }) => {
   return (

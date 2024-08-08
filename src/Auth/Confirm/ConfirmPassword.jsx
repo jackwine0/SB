@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "../css/confirmpassword.css";
+import "./confirmpassword.css";
 
 const ConfirmPassword = () => {
   const [formData, setFormData] = useState({
@@ -82,11 +82,15 @@ const ConfirmPassword = () => {
           </button>
         </form>
       </div>
-      <div className="password-image">
-        <img
-          src="https://res.cloudinary.com/duicyr28v/image/upload/v1722404737/9951f78474309b2ddc3d44cc201c51be_kkjnqk.jpg"
-          alt="Background"
-        />
+      <div className="signin-image">
+        <div className="spinner">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
       </div>
       {showPopup && (
         <div className="password-popup">

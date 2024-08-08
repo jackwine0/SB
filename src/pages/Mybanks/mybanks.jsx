@@ -1,8 +1,8 @@
 // src/pages/MyBanks.jsx
 
 import React, { useState } from "react";
-import BankCard from "../components/BankCard";
-import "../css/MyBanks.css";
+import BankCard from "../../components/BankCard";
+import "./MyBanks.css";
 
 const MyBanks = ({ title, subtitle }) => {
   const [cards, setCards] = useState([]);

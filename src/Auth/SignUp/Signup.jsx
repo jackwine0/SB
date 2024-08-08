@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
-import '../css/signup.css'; // Import the CSS file for styling
+import { useNavigate } from 'react-router-dom'; // Import useNavigate hook
+import './signup.css'; // Import the CSS file for styling
 
 const Signup = () => {
+  const navigate = useNavigate(); // Initialize useNavigate hook
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -9,7 +11,7 @@ const Signup = () => {
     dob: '',
     email: '',
     password: '',
-    country: '', // Add country field dropdown
+    country: '',
   });
 
   const handleChange = (e) => {
@@ -20,6 +22,8 @@ const Signup = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Handle form submission logic here
+    // Simulate successful signup and redirect to OTP page
+    navigate('/otp');
   };
 
   const [showPassword, setShowPassword] = useState(false);
@@ -105,9 +109,9 @@ const Signup = () => {
                 className="signup__select"
               >
                 <option value="">Select Country</option>
-                <option value="us">United States</option>
-                <option value="ca">Canada</option>
-                {/* Add more options as needed */}
+                <option value="us">Nigeria</option>
+                <option value="ca">Ghana</option>
+                {/* Add more countries as needed */}
               </select>
             </div>
           </div>
@@ -125,33 +129,34 @@ const Signup = () => {
               />
             </div>
           </div>
-          <div className="signup__password-container">
+          <div className="signup__input-row">
             <div className="signup__input-container">
               <label htmlFor="password" className="signup__label">Password</label>
               <input
-                type={showPassword ? 'text' : 'password'}
+                type={showPassword ? "text" : "password"}
                 id="password"
                 name="password"
-                placeholder="Enter your password"
+                placeholder="Password"
                 value={formData.password}
                 onChange={handleChange}
-                className="signup__input signup__password-input"
+                className="signup__input"
               />
-            
+             
             </div>
           </div>
           <button type="submit" className="signup__button">Sign Up</button>
         </form>
-        <p className="signup__login-link">
-          Already have an account? <a href="/signin" className="signup__login-anchor"><strong>Login</strong></a>
-        </p>
+        <p className="signup__link-text">Already have an account? <a href="/signin" className="signup__link">Login</a></p>
       </div>
       <div className="signup__col2">
-        <img
-          src="https://your-image-url.com/signup-background.jpg" // Update with the actual image URL
-          alt="Signup Background"
-          className="signup__background-image"
-        />
+        <div className="spinner">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
       </div>
     </div>
   );

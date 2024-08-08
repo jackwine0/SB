@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom"; // Import useNavigate
-import "../css/signin.css";
+import { useNavigate } from "react-router-dom";
+import "./signin.css";
 
 const Signin = () => {
   const [formData, setFormData] = useState({
@@ -8,7 +8,7 @@ const Signin = () => {
     password: "",
   });
 
-  const navigate = useNavigate(); // Initialize navigate
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setFormData({
@@ -19,15 +19,11 @@ const Signin = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission logic here
     console.log("Form data submitted:", formData);
-
-    // Navigate to home on successful sign-in
     navigate("/home");
   };
 
   const handleSignupNavigation = () => {
-    // Navigate to the signup page
     navigate("/signup");
   };
 
@@ -75,25 +71,27 @@ const Signin = () => {
             </button>
           </form>
           <div className="xx">
-          <div className="signup-prompt">
-            Don't have an account?{" "}
-            <span
-              onClick={handleSignupNavigation}
-            >
-              <strong>Sign up</strong>
-            </span>
-          </div>
-          <a href="/forgot-password" className="forgot-link">
-            <strong>Forgot your password?</strong>
-          </a>
+            <div className="signup-prompt">
+              Don't have an account?{" "}
+              <span onClick={handleSignupNavigation}>
+                <strong>Sign up</strong>
+              </span>
+            </div>
+            <a href="/forgot-password" className="forgot-link">
+              <strong>Forgot your password?</strong>
+            </a>
           </div>
         </div>
       </div>
       <div className="signin-image">
-        <img
-          src="https://res.cloudinary.com/duicyr28v/image/upload/v1722404737/9951f78474309b2ddc3d44cc201c51be_kkjnqk.jpg"
-          alt="Background"
-        />
+        <div className="spinner">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
       </div>
     </div>
   );
