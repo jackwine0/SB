@@ -28,9 +28,7 @@ const Signup = () => {
 
   const [showPassword, setShowPassword] = useState(false);
 
-  const togglePasswordVisibility = () => {
-    setShowPassword(!showPassword);
-  };
+ 
 
   return (
     <div className="signup__container">
