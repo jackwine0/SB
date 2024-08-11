@@ -1,38 +1,7 @@
-/* BudgetSection.css */
+/* src/css/BudgetSection.css */
 
-.budget-list {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  
-  .budget-card {
-    background-color: #fff;
-    padding: 10px;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    text-align: left;
-  }
-  
-  .budget-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
-  .emoji {
-    font-size: 24px;
-  }
-  
-  .amount-left {
-    font-weight: bold;
-    font-size: 14px;
-    text-align: left;
-  }
-  
-  .progress-bar {
-    margin-top: 5px;
-    height: 6px;
-    border-radius: 3px;
-  }
-  
+.budget-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}

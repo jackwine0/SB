@@ -1,61 +1,35 @@
-/* src/css/Home.css */
-
 .home-container {
   display: flex;
   flex-direction: row;
-  margin: 0 auto;
-  max-width: 1200px; /* Adjust as needed */
+  justify-content: space-between;
 }
 
 .home-content {
   flex: 1;
-  padding: 20px;
 }
 
 .welcome {
   margin-bottom: 20px;
 }
 
-.welcome h1 {
-  margin: 0;
-  font-size: 2rem;
-  color: #333; /* Adjust as needed */
-}
-
-.welcome p {
-  font-size: 1.2rem;
-  color: #666; /* Adjust as needed */
-}
-
-.bal {
-  margin-top: 20px;
-}
-
-.trans {
-  margin-top: 20px;
+.balance-section,
+.transactions-section {
+  margin-bottom: 30px;
 }
 
 .profile-sidebar {
-  width: 350px;
-  background-color: #f5f5f5; /* Adjust as needed */
-  border-left: 1px solid #ddd; /* Optional for a border between content and profile */
+  width: 300px;
+  transition: width 0.3s ease;
 }
 
-.profile-sidebar h2 {
-  margin-top: 0;
-  font-size: 1.5rem;
-  color: #333; /* Adjust as needed */
-}
 
-/* Add responsiveness for smaller screens */
+
 @media (max-width: 768px) {
   .home-container {
     flex-direction: column;
   }
 
   .profile-sidebar {
-    width: 100%;
-    border-left: none;
-    margin-top: 20px;
+   display: none;
   }
 }

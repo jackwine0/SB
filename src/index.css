@@ -62,19 +62,54 @@ button:hover {
 }
 
 
-/* src/index.css */
+/* Responsive Design */
 @media (max-width: 768px) {
   .sidebar {
-    width: 200px;
-  }
-}
-
-@media (max-width: 480px) {
-  .sidebar {
-    display: none; /* or use a toggle to show/hide */
+    width: 80px;
   }
 
   .content {
-    margin-left: 0;
+    margin-left: 90px; /* The width of the sidebar */
+    padding: 20px; /* Padding around the content */
+    width: calc(100% - 90px); /* Remaining width of the viewport */
+    background-color: #ffffff; /* White background for content area */
+    overflow-y: auto; /* Allow scrolling if content overflows */
+  }
+  
+
+  
+  .company-name,
+  .nav-text,
+  .user-name,
+  .user-email {
+    display: none;
+  }
+
+  .nav-item {
+    justify-content: center;
+  }
+
+  .sidebar-footer {
+    flex-direction: column;
+  }
+
+  .user-info {
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .avatar {
+    margin-right: 0;
+    margin-bottom: 5px;
+  }
+
+ 
+  .search-bar {
+    justify-content: center;
+  }
+
+  .search-input {
+    display: none;
   }
 }
+

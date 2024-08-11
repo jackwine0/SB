@@ -1,5 +1,6 @@
-import React, { useState } from "react";
-import "../css/RecentTransactions.css";
+// src/components/RecentTransactions.jsx
+import React, { useState } from 'react';
+import '../css/RecentTransactions.css';
 
 const bankTabs = [
   { initials: "CB", name: "Chase Bank" },
@@ -65,9 +66,7 @@ const RecentTransactions = () => {
           <div className="bank-avatar">{bankTabs.find(tab => tab.name === activeTab).initials}</div>
           <div className="bank-details">
             <span className="bank-name">{activeTab}</span>
-            <span className="bank-amount">
-              <p>{amount}</p>
-            </span>
+            <span className="bank-amount">{amount}</span>
           </div>
           <div className="account-type">{accountType}</div>
         </div>

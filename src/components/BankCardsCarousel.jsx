@@ -1,49 +1,38 @@
-import React, { useState } from 'react';
+// src/components/BankCardsCarousel.jsx
+import React, { useRef, useEffect } from 'react';
+import Flickity from 'flickity';
+import 'flickity/css/flickity.css'; // Import Flickity CSS
+import BankCard from './BankCard';
 import '../css/BankCardsCarousel.css';
 
-const BankCardsCarousel = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const bankCards = [
-    {
-      bankName: 'JS Mastery Pro.',
-      cardHolder: 'ADRIAN HAJDIN',
-      cardNumber: '1234 1234 1234 1234',
-      expiry: '06/24',
-      color: '#4a90e2',
-    },
-    // Additional cards can be added here
-  ];
+const BankCardsCarousel = ({ banks = [] }) => {
+  const flickityRef = useRef(null);
 
-  const handlePrev = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? bankCards.length - 1 : prevIndex - 1
-    );
-  };
-
-  const handleNext = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === bankCards.length - 1 ? 0 : prevIndex + 1
-    );
-  };
+  useEffect(() => {
+    if (flickityRef.current) {
+      new Flickity(flickityRef.current, {
+        wrapAround: true,      // Allows for continuous scrolling
+        autoPlay: true,        // Automatically move to the next card
+        cellAlign: 'center',   // Align the card in the center of the viewport
+        contain: true,         // Ensure the carousel is contained within its parent
+        pageDots: false,       // Hide page dots
+        prevNextButtons: false // Hide previous/next buttons
+      });
+    }
+  }, [banks]);
 
   return (
-    <div className="carousel">
-      {bankCards.length > 0 ? (
-        <div className="card" style={{ backgroundColor: bankCards[currentIndex].color }}>
-          <div className="card-details">
-            <h4>{bankCards[currentIndex].bankName}</h4>
-            <p>{bankCards[currentIndex].cardHolder}</p>
-            <p>{bankCards[currentIndex].cardNumber}</p>
-            <p>{bankCards[currentIndex].expiry}</p>
-          </div>
-          <div className="carousel-controls">
-            <button onClick={handlePrev}>&lt;</button>
-            <button onClick={handleNext}>&gt;</button>
-          </div>
+    <div className="gallery js-flickity" ref={flickityRef}>
+      {banks.map((bank, index) => (
+        <div className="gallery-cell" key={index}>
+          <BankCard
+            cardNumber={bank.cardNumber}
+            name={bank.name}
+            expiryDate={bank.expiryDate}
+            bankName={bank.bankName}
+          />
         </div>
-      ) : (
-        <div className="no-cards">No bank cards available</div>
-      )}
+      ))}
     </div>
   );
 };

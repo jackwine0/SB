@@ -1,5 +1,7 @@
-
-
+/* RECENT TRANSACTIONS */
+.recent-transactions{
+  margin-right: 10px;
+}
 .header {
   display: flex;
   justify-content: space-between;
@@ -12,15 +14,12 @@
   color: #ffffff;
   border: none;
   padding: 10px 20px;
-  width: 70px;
   cursor: pointer;
   border-radius: 5px;
 }
 
 .bank-tabs {
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
   border-bottom: 2px solid #e0e0e0;
   margin-bottom: 20px;
 }
@@ -60,9 +59,9 @@
 }
 
 .bank-profile {
-  background:linear-gradient(135deg, #006d32, #00c853);
+  background: linear-gradient(135deg, #006d32, #00c853);
   display: flex;
-  color:#fff;
+  color: #fff;
   padding: 30px;
   justify-content: space-between;
   align-items: center;
@@ -142,32 +141,68 @@
   font-weight: bold;
 }
 
-.amount.negative {
-  color: red;
+.transaction-table-row {
+  cursor: pointer;
+  transition: background-color 0.2s ease;
 }
 
-.amount.positive {
-  color: green;
+.transaction-table-row:hover {
+  background-color: #f5f5f5;
 }
 
-.status-dot {
-  display: inline-block;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  margin-right: 5px;
+.transaction-status {
+  font-weight: bold;
 }
 
-.status.processing .status-dot {
-  background-color: orange;
+.status-paid {
+  color: #00c853;
 }
 
-.status.declined .status-dot {
-  background-color: red;
+.status-pending {
+  color: #f57f17;
 }
 
-.status.success .status-dot {
-  background-color: green;
+.status-failed {
+  color: #d32f2f;
 }
 
 
+.view-all-button{
+  background-color: #fff;
+  color: #000;
+  width: 100px;
+  border: 2px solid #ddd;
+}
+
+
+.view-all-button:hover{
+  background: linear-gradient(135deg, #006d32, #00c853);
+color: #fff;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .bank-profile {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .bank-avatar {
+    margin-bottom: 10px;
+  }
+
+  .bank-details {
+    margin-left: 0;
+  }
+
+  /* Responsive styles */
+
+
+
+@media only screen and (max-width: 480px) {
+  .bank-profile {
+    width: 100%;
+  }
+ 
+}
+}

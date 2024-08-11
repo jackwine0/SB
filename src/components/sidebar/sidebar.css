@@ -1,135 +1,221 @@
-/* sidebar.css */
-
+/* Sidebar Container */
 .sidebar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 250px;
-  background:linear-gradient(135deg, #006d32, #00c853);
-  color: #ffffff;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  background: linear-gradient(135deg, #006d32, #00c853);
+  width: 250px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
   padding: 20px;
-  box-sizing: border-box;
-  z-index: 1000;
+  transition: width 0.3s ease;
 }
 
+/* Sidebar Header */
 .sidebar-header {
   display: flex;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .company-logo {
+  width: 40px;
   height: 40px;
   margin-right: 10px;
 }
 
+.company-name {
+  font-size: 18px;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+/* Sidebar Content */
 .sidebar-content {
   flex-grow: 1;
 }
 
 .search-bar {
-  width: 220px;
-  position: relative
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 5px 10px;
+  margin-bottom: 20px;
+  height: 40px;
 }
 
 .search-icon {
-  position: absolute;
-  right: 20px;
-  margin-bottom: auto;
-  top: calc(50% + 5px);
-  color: #000;
-  transform: translateY(calc(-50% - 5px));
+  color: #00c853;
+  margin-right: 10px;
 }
 
 .search-input {
-  width: 97%;
-  height: 40px;
-  padding: 10px;
-  transition: .2s linear;
+  border: none;
+  outline: none;
+  width: 100%;
   font-size: 14px;
-  letter-spacing: 2px;
 }
 
-.search-icon {
-  animation: anim 1s linear infinite;
-}
-
-@keyframes anim {
-  0%,
-  100% {
-    transform: translateY(calc(-50% - 5px)) scale(1);
-  }
-
-  50% {
-    transform: translateY(calc(-50% - 5px)) scale(1.1);
-  }
+/* Navigation Links */
+.nav-links {
+  display: flex;
+  flex-direction: column;
 }
 
 .nav-item {
   display: flex;
   align-items: center;
+  padding: 10px;
   color: #ffffff;
   text-decoration: none;
-  padding: 10px;
-  margin-bottom: 10px;
-  border-radius: 5px;
-  transition: background 0.3s;
+  transition: background-color 0.3s ease;
 }
 
-.nav-item:hover,
-.nav-item:focus,
-.nav-item:active {
-  background: #006d32;
+.nav-item:hover {
+  background-color: #00c853;
+  /* Adjust hover color as needed */
+  border-radius: 8px;
+  font-size: large;
 }
 
-.topic {
-  margin-left: 10px;
+.nav-text {
+  margin-left: 15px;
+  font-size: 16px;
+  flex-grow: 1;
+  white-space: nowrap;
 }
 
+/* Sidebar Footer */
 .sidebar-footer {
+  border-top: 1px solid #cccccc;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-top: 1px solid #ddd;
+  /* Center the content horizontally */
+}
+
+.nav-itemx {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  color: #ffffff;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  padding: 10px 20px;
+  /* Add some padding to the logout button */
+  border-radius: 8px;
+  /* Add a border radius to the logout button */
+  cursor: pointer;
+  /* Change the cursor to a pointer on hover */
+}
+
+.nav-itemx:hover {
+  background-color: #00c853;
+  /* Adjust hover color as needed */
+  font-size: large;
+}
+
+.logout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Center the logout icon */
 }
 
 .user-info {
   display: flex;
   align-items: center;
-  margin-bottom: 10px;
+  /* Center the user info vertically */
+  margin-bottom: 20px;
+  /* Add some margin bottom to separate from the logout button */
 }
 
 .avatar {
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   margin-right: 10px;
+  /* Add some margin right to separate from the user details */
 }
 
 .user-details {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+  color: #ffffff;
 }
 
-.user-name,
+.user-name {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  /* Add some margin bottom to separate from the user email */
+}
+
 .user-email {
-  color: #ffffff;
+  font-size: 12px;
+  color: #cccccc;
 }
 
-.logout-button {
-  background: none;
-  border: none;
-  color: #ffffff;
-  cursor: pointer;
-  font-size: 16px;
-  display: flex;
-  align-items: center;
-}
 
-.logout-button:hover {
-  color: #05bb9a;
+/* Responsive Design */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 80px;
+  }
+
+
+  .company-name,
+  .nav-text,
+  .user-name,
+  .user-email {
+    display: none;
+  }
+
+  .nav-item {
+    justify-content: center;
+  }
+
+  .sidebar-footer {
+    flex-direction: column;
+  }
+
+  .user-info {
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .avatar {
+    margin-right: 0;
+    margin-bottom: 5px;
+  }
+
+
+
+  .search-bar {
+    background-color: transparent;
+    display: flex;
+    transition: background-color 0.3s ease;
+    padding: 10px 20px;
+    /* Add some padding to the logout button */
+    border-radius: 8px;
+    /* Add a border radius to the logout button */
+    cursor: pointer;
+  }
+
+  .search-bar:hover {
+    background-color: #00c853;
+  }
+
+  .search-icon {
+    color: #ffffff;
+    cursor: pointer;
+    margin-left: 5px;
+  }
+
+
 }

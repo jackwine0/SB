@@ -1,80 +1,55 @@
 .total-balance-box {
-  position: relative;
   display: flex;
   align-items: center;
-  background-color: #ffffff; /* or any other background color */
-  border: 1px solid #e0e0e0; /* Light border for visual separation */
-  border-radius: 8px; /* Rounded corners */
-  padding: 16px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  justify-content: space-between;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 20px 0;
+  margin-right: 10px;
 }
 
 .chart-container {
-  flex: 0 0 auto;
-  margin-right: 20px;
+  width: 100px; /* Adjust the size of the chart */
+  height: 100px;
+  position: relative;
 }
 
-.details {
+.balance-details {
+  margin-left: 20px;
   flex: 1;
-}
-
-.total-banks {
-  font-size: 18px;
-  font-weight: bold;
-  margin: 0;
-  color: #333; /* Dark text color for visibility */
-}
-
-.balance-info {
-  margin-top: 10px;
-}
-
-.balance-label {
-  font-size: 14px;
-  color: #666; /* Slightly lighter text color for label */
-}
-
-.balance-amount {
-  font-size: 24px;
-  font-weight: bold;
-  color: #00c853; /* Primary color for balance amount */
-}
-
-.add-bank {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background-color: #f1f1f1; /* Background color for the button */
-  padding: 8px 12px;
-  border-radius: 4px;
-  font-size: 14px;
-  color: #006d32; /* Primary color for text */
-  cursor: pointer;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.plus-icon {
-  margin-left: 5px;
-  font-size: 18px;
-  font-weight: bold;
-  color: #00c853; /* Color of the plus icon */
+.balance-details h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .total-balance-box {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+.balance-details p {
+  font-size: 14px;
+  color: #888;
+  margin: 5px 0;
+}
 
-  .chart-container {
-    margin-right: 0;
-    margin-bottom: 20px;
-  }
+.balance-details h2 {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 10px 0;
+}
 
-  .add-bank {
-    top: 5px;
-    right: 5px;
-  }
+.add-bank-link {
+  color: #006d32;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 5px;
+}
+
+.add-bank-link:hover {
+  text-decoration: underline;
 }
