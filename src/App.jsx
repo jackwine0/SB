@@ -46,7 +46,7 @@ function App() {
         element={
           <ProtectedRoute>
             <Home
-              title="Welcome Samuel"
+              title="Welcome Julius Haruna"
               subtitle="Access & manage your account and transactions efficiently."
             />
           </ProtectedRoute>
