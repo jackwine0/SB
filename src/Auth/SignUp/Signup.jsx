@@ -108,7 +108,7 @@ const Signup = () => {
               >
                 <option value="">Select Country</option>
                 <option value="us">Nigeria</option>
-                <option value="ca">Ghana</option>
+                <option value="ca">USA</option>
                 {/* Add more countries as needed */}
               </select>
             </div>
